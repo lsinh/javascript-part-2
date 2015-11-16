@@ -22,7 +22,61 @@ function longestWord(arrayOfWords) {
     else {
         return 1;
     }
-    
+
+//returns largest name first along with object properties
+
+var name1 = {
+       name : "Span",
+       email: "spantheman@hotmail.com"
+       };
+
+var name2 = {
+   name : "Stanley",
+   
+   email: "stantheman@hotmail.com"
+   };
+
+var name3 = {
+   name : "Susie",
+   email: "susieQ@hotmail.com"
+   };
+
+var arrayOfPeople =[
+    name1,
+    name2,
+    name3
+   ];
+
+function longestWord(arrayOfPeople){
+   var sortedArrayByLength = arrayOfPeople.sort(
+        function(a,b){
+
+           if (a.name.length < b.name.length){
+               return 1;
+           }        
+           else {
+               return -1;
+           }
+       });
+   
+   return sortedArrayByLength;    
+}
+
+function alphaEmails (arrayOfPeople){
+   var sortedArrayByLetter = arrayOfPeople.sort(
+       function(a,b){
+           if (a.email < b.email){
+               return -1;
+           }
+           else{
+               return 1;
+           }
+       });
+   return sortedArrayByLetter;
+}
+
+console.log(longestWord(arrayOfPeople));
+console.log(alphaEmails(arrayOfPeople));
 
 
 //Function returns the square root, then this function is mapped to an array to return the square root of each element in the array
