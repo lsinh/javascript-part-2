@@ -110,3 +110,35 @@ console.log(square);
 
 
 
+//Major difference here is returning a function that returns the different mathematical steps
+function operationMaker(operation) {
+  
+    if (operation === 'add') {
+      return function(num1, num2) {
+        return num1 + num2;
+      };
+    }
+    if (operation === 'mult') {
+      return function(num1, num2) {
+        return num1 * num2;
+      };
+    }
+    if (operation === 'subtract') {
+      return function(num1, num2) {
+        return num1-num2;
+      };
+    }
+    if (operation === 'div') {
+        return function(num1, num2) {
+      return num1/num2;
+      };
+    }
+    return 0;
+}
+
+var adder = operationMaker('add');
+var sum = adder(5, 10);
+
+console.log(sum);
+
+
