@@ -142,3 +142,39 @@ var sum = adder(5, 10);
 console.log(sum);
 
 
+//this is a constructor function for Warrior
+function Warrior(name, gender, level, weapon, power) {
+    this.name = name;
+    this.gender = gender;
+    this.level = level ;
+    this.weapon = weapon;
+    this.power = power;
+  
+}
+  
+Warrior.prototype.fight = function() {
+    console.log( this.name + " rushes to the arena with a" + this.weapon);
+    
+  };
+
+
+Warrior.prototype.faceoff = function(opponent) {
+  if (this.power > opponent.power) {
+    console.log(this.name + "wins!");
+  }  
+  else if (this.power < opponent.power) {
+    console.log(this.name + "loses");
+  }
+  else {
+    console.log("draw");
+  }
+};
+
+var rick = new Warrior("Rick", "M", 4, "sword", 6); //{name: "Rick", gender: "M"}
+
+
+var prick3 = new Warrior("prick", "M", 5, "sword", 8);
+
+prick3.faceoff(rick);
+
+
